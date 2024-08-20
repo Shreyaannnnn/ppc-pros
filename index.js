@@ -17,7 +17,7 @@ const { connectDatabase, mongooseInstance } = require('./db.config');
 // const { checkInactiveUsers } = require('./src/middlewares/inactiveUser');
 
 
-const User = require('./src/modules/User/user');
+// const User = require('./src/modules/User/user');
 
 // Constants
 const port = 8080;
@@ -62,7 +62,7 @@ app.get('/', (req, res) => {
 connectDatabase()
   .then(async () => {
 
-    server.listen(port, () => {
+    server.listen(process.env.PORT || port, () => {
       console.log(`Server is running on port ${port}`);
     });
   })
