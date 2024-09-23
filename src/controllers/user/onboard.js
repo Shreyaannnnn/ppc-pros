@@ -22,7 +22,6 @@ const onboardUser = async (req, res) => {
 
         return res.status(200).json({ message: 'User details updated successfully', user });
     
-
     }
 
     catch(error){

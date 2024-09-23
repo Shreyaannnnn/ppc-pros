@@ -19,6 +19,8 @@ const { connectDatabase, mongooseInstance } = require('./db.config');
 
 // const User = require('./src/modules/User/user');
 
+const blogRouter = require('./src/routes/BlogData/blog');
+
 // Constants
 const port = 8080;
 
@@ -58,6 +60,7 @@ app.get('/', (req, res) => {
 // app.use("/api/otp", otpRouter);
 // app.use("/api/chat", chatRouter);
 // app.use("/api/community", communityRouter);
+app.use("/api/blogs", blogRouter)
 // Starting the server after connecting to the database
 connectDatabase()
   .then(async () => {
